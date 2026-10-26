@@ -11,13 +11,15 @@ on:
   push:
     paths:
       - "src/**"
+    
   schedule:
     - cron: "*/5 * * * *"
 
-job:
+jobs:
   shake:
     runs-on: ubuntu-latest
     steps:
-      - env:
-        NOME: ${{ inputs.nome || 'agendamento' }}
-      run: echo "Olá, $NOME ($GITHUB_EVENT_NAME)"
+      - name: "exec"
+        env:
+          NOME: ${{ inputs.name || 'agendamento' }}
+        run: echo "Olá, $NOME ($GITHUB_EVENT_NAME)"
