@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: repository checkout
-        uses: action/checkout@v7
+        uses: actions/checkout@v7
       
       - name: python version an so on
         uses: actions/setup-python@v7
