@@ -21,6 +21,6 @@ jobs:
         
       - name: install requirements and do tests
         run: |
-          python pip install
-          pip install requirements-dev.txt
+          python -m pip install
+          pip install -r requirements-dev.txt
           pytest -v
