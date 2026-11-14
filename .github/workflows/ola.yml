@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: saying hello
-        run: echo "Olá, ${{ github.actor }}. Evento ${{ github.event_name }}"
         run: |
-          echo "SO informations"
+          echo "Olá, ${{ github.actor }}. Evento: ${{ github.event_name }}"
+          echo "SO informations: "
           uname -a
           python --version
           ls -la
