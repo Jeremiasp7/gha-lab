@@ -11,9 +11,15 @@ jobs:
   pipeline:
     runs-on: ubuntu-latest
     steps:
-      - name: verifications
+      - name: repository checkout
+        uses: action/checkout@v7
+      
+      - name: python version an so on
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+        
+      - name: install requirements and do tests
         run: |
-          checkout
-          setup-python 3.12
-          pip install requirements-dev.txt
+          python install requirements-dev.txt
           pytest -v
