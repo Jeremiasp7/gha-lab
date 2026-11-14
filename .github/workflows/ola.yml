@@ -1,10 +1,12 @@
 name: first action
 
-on: push
+on:
+  push
+  workflow_dispatch
 
 jobs:
   saudacao:
     runs-on: ubuntu-latest
-      steps:
-        - name: saying hello
-          run: echo "hello world"
+    steps:
+      - name: saying hello
+        run: echo "hello world"
