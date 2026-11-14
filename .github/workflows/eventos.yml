@@ -1,0 +1,10 @@
+name: class events
+
+on:
+  workflow_call:
+    inputs:
+      name: turma
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/**'
