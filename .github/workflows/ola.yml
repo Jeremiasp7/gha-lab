@@ -1,8 +1,8 @@
 name: first action
 
 on:
-  push
-  workflow_dispatch
+  push:
+  workflow_dispatch:
 
 jobs:
   saudacao:
