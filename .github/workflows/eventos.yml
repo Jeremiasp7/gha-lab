@@ -5,18 +5,18 @@ on:
     inputs:
       nome:
         required: true
-        default: "IMD"
+        default: "turma"
         type: string
   push:
     paths:
       - 'src/**'
-  schedule:
-    - cron: "5 * * * *"
 
 jobs:
   turma:
     runs-on: ubuntu-latest
     steps:
       - name: Nome da turma
+      - env:
+          NOME: ${{ inputs.nome }}
         run: |
-          echo "${{ inputs.nome }}"
+          echo "oi, $NOME"
