@@ -1,0 +1,19 @@
+name: first CI pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: verifications
+        run: |
+          checkout
+          setup-python 3.12
+          pip install requirements-dev.txt
+          pytest -v
