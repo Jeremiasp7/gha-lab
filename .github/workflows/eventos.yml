@@ -10,6 +10,8 @@ on:
   push:
     paths:
       - 'src/**'
+  schedule:
+    - cron: "5 * * * *"
 
 jobs:
   turma:
@@ -17,4 +19,4 @@ jobs:
     steps:
       - name: Nome da turma
         run: |
-          echo "{{ inputs.nome }}"
+          echo "${{ inputs.nome }}"
